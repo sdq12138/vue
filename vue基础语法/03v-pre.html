@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <p>{{msg}}<p>
+  <p v-pre="msg">{{msg}}</p>
+</div>
+<script src="vue.js"></script>
+<script>
+  /*
+  使用v-pre语法后内容将不受编译，无法获取内部内容，保留原始内容
+   */
+  const App = Vue.createApp({
+    data() {
+      return {
+        msg: 'hello world'
+      }
+    }
+  }).mount('#app');
+</script>
+</body>
+</html>

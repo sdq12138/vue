@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  [v-cloak]{
+    background-color: darkorchid;
+  }
+</style>
+<body>
+<div id="app">
+  <p>{{msg}}<p>
+  <h1 v-cloak style="color: red">{{msg}}</h1>
+</div>
+<script src="vue.js"></script>
+<script>
+  /**
+   * 使用v-cloak可以检测网络不好时的源码----解析前的源码
+   */
+  const App = Vue.createApp({
+    data() {
+      return {
+        msg: 'hello world'
+      }
+    }
+  }).mount('#app');
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <h2>{{msg}}</h2>
+  <!---->
+  <p style="font-size: 50px;">{{msg}}</p>
+  <!--动态配置-->
+  <!--  <p style="font-size: 50px;">{{msg}}</p>，50px当做变量（值）来解析，要把50px当做字符串，加’‘,用动态配置之后得用大括号处理，之前有中线-的是
+  以css的方式来解析，js中用大写字母来替代-（中线） -->
+  <p :style="{fontSize:'60px'}">{{msg}}</p>
+  <p :style="{color:'red',backgroundColor:'pink'}">{{msg}}</p>
+  <!--动态绑定-->
+  <p :style="{backgroundColor:'xColor',frontSize:'f'}"></p>
+</div>
+<script src="vue.js"></script>
+<script>
+  const App = Vue.createApp({
+    data() {
+      return {
+        msg: 'hello world',
+        xColor:'blue',
+        f:'50px'
+      }
+    }
+  }).mount('#app');
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  .pink{
+    color: pink;
+    width: 200px;
+    height: 200px;
+    background-color: mediumpurple;
+  }
+  .aqua{
+    color: aqua;
+    width: 200px;
+    height: 200px;
+    background-color: mediumpurple;
+  }
+  .f60{
+    font-size: 60px;
+  }
+</style>
+<body>
+<div id="app">
+  <p :class="{[c]:isR,[f]:isF}">{{msg}}</p>
+  <button v-on:click="changeColor">change color</button>
+  <button @click="change">变换</button>
+</div>
+<script src="vue.js"></script>
+<script>
+  const App = Vue.createApp({
+    data() {
+      return {
+        msg: 'hello world',
+        c:'pink',
+        f:'f60',
+        isR:true,
+        isF:true
+      }
+    },
+    methods:{
+      change(){
+        this.isR = !this.isR;
+        this.isF = !this.isF;
+      },
+      changeColor(){
+        this.c = this.c === 'pink' ? 'aqua':'pink';
+      }
+    }
+  }).mount('#app');
+</script>
+</body>
+</html>

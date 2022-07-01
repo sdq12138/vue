@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  .pink{
+    color: pink;
+  }
+  .f60{
+    font-size: 40px;
+  }
+</style>
+<body>
+<div id="app">
+  <p :class="{[c]:isR,[f]:isF}">{{msg}}</p>
+  <p :class="intClass()">{{msg}}</p>
+  <button @click="change">change</button>
+</div>
+<script src="vue.js"></script>
+<script>
+  const App = Vue.createApp({
+    data() {
+      return {
+        msg: 'hello world',
+        c:'pink',
+        f:'f60',
+        isR:true,
+        isF:true
+      }
+    },
+    methods:{
+      change(){
+        this.isR = !this.isR;
+        this.isF = !this.isF;
+      },
+      intClass(){
+        return [this.c,this.f];
+      }
+    }
+  }).mount('#app');
+</script>
+</body>
+</html>
