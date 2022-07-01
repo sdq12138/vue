@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>V-once语法学习</title>
+</head>
+<body>
+  <div id="app">
+    <p>能改变的</p>
+      <p>{{msg}}</p>
+    <p>不能改变的</p>
+    <p v-once>{{msg}}</p>
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    /*
+    使用v-once语法的变量不能在网页中修改内容
+     */
+    const App = Vue.createApp({
+        data(){
+            return{
+                msg:'hello world'
+            }
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>V-test语法学习</title>
+</head>
+<body>
+<div id="app">
+    <h1>{{msg}}</h1>
+  <p>现在有内容</p>
+  <p v-text="msg">我被替换了</p>
+</div>
+<script src="vue.js"></script>
+<script>
+  /**
+   * 使用v-text会将标签内的内容替换成v-text语法所拥有的内容
+   */
+  const App = Vue.createApp({
+      data(){
+          return{
+              msg:'v-once语法学习'
+          }
+      }
+  }).mount('#app');
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div>{{Colleges}}</div>
+    <p>----------------------</p>
+    <ul>
+        <li v-for="College in Colleges">{{College}}</li>
+    </ul>
+</div>
+<script src="vue.js"></script>
+<script>
+    const listApp = {
+        data() {
+            return {
+                Colleges : ['js','css','html']
+            }
+        }
+    }
+    const App = Vue.createApp(listApp).mount('#app');
+</script>
+</body>
+</html>

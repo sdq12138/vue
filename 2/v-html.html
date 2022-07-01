@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{msg}}
+  <p v-html="msg"></p>
+</div>
+<script src="vue.js"></script>
+<script>
+  const App = Vue.createApp({
+    data() {
+      return {
+        msg:'<a href="http://www.itheima.com">点我试试</a>'
+      }
+    }
+  }).mount('#app');
+</script>
+</body>
+</html>

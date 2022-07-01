@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h1>{{massege}}</h1>
+    <p>-----------指令--------------</p>
+    <button @click="first">一键变1</button>
+    <button @click="second">一键变2</button>
+</div>
+<script src="vue.js"></script>
+<script>
+  const App = Vue.createApp({
+    data(){
+        return{
+            massege :''
+        }
+    },
+      methods:{
+        first(){
+            //alert('傻');
+            this.massege = '傻';
+          },
+        second(){
+            //alert('聪明');
+            this.massege = '聪明';
+          }
+      }
+
+  }).mount('#app')
+</script>
+</body>
+</html>

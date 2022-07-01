@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h1>{{m}}</h1>
+</div>
+<script src="vue.js"></script>
+<script>
+    //0、创建实例的全局配置对象
+    const express = {
+        data(){
+            return{
+              m:'hello world'
+            }
+        }
+    }
+    // 1、创建vue的实例对象
+    const app = Vue.createApp(express).mount('#app');
+</script>
+</body>
+</html>
