@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div id="app">
+    <p>计数器</p>
+    <h1>{{count}}</h1>
+    <button v-on:click="sub()"> - </button>
+    <!--v-on可以简写为@-->
+    <button @click="add()"> + </button>
+  </div>
+<script src="vue.js"></script>
+<script>
+  const App = Vue.createApp({
+    data() {
+      return {
+        count:'0'
+      }
+    },
+    methods:{
+      sub(){
+        this.count--;
+      },
+      add(){
+        this.count++;
+      }
+    }
+  }).mount('#app');
+</script>
+</body>
+</html>
