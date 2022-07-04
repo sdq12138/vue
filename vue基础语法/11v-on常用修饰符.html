@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-on修饰符</title>
+</head>
+<style>
+  .box{
+    background-color: pink;
+    width: 100px;
+    height: 100px;
+  }
+</style>
+<body>
+  <div id="app">
+    <!--1、阻止冒泡-->
+    <div class="box" @click.="boxClick">
+      <!--盒子事件被监听了-->
+      <button @click.stop="btnClick">click</button>
+      <!--在@click后面加stop和event.stopProgagation效果差不多-->
+    </div>
+    <!--2、阻止默认事件-->
+    <form action = "http://www.itheima.com">
+      <input type="submit" value="提交" @click.prevent="doSubmit">
+    </form>
+    <a href="http://www.baidu.com" @click.prevent="aClick">百度</a>
+    <!--3、相应一次事件-->
+    <button @click.once="btnClick">click me</button><!--和之前的v-once指令差不多-->
+    <!--点击响应只发生一次-->
+    <!--4、键盘事件修饰符       重点掌握.enter修饰符-->
+    <input type="text" @keyup="getMsg">
+    <p>----------------------</p>
+    <input type="text" @keyup.enter="getMsg">
+    <!--敲回车键响应-->
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    const App = Vue.createApp({
+      data() {
+        return {
+          msg: 'hello world'
+        }
+      },
+      methods:{
+        boxClick(){
+          console.log('点击了盒子');
+        },
+        btnClick(event){
+          //event.stopPropagation();能阻止事件冒泡
+          console.log('点击了按钮');
+        },
+        doSubmit(event){
+          //event.preventDefault();阻止默认事件发生
+          console.log('表单提交');
+        },
+        aClick(){
+          console.log('点击了a标签');
+        },
+        getMsg(event){
+          console.log(event);
+        }
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>
